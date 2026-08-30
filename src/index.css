@@ -1,0 +1,56 @@
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-graphite text-bone font-display antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #CBFF4D;
+  color: #14140f;
+}
+
+:focus-visible {
+  outline: 2px solid #CBFF4D;
+  outline-offset: 3px;
+}
+
+.mono-label {
+  @apply font-mono text-[11px] tracking-[0.18em] uppercase text-bone-dim;
+}
+
+.hairline {
+  @apply border-t border-slate-line;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
