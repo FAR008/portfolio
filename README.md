@@ -3,6 +3,39 @@
 A single-page portfolio for Muhammad Farooq (Flutter & Android App Developer),
 built with React, Vite, and Tailwind CSS.
 
+## Publish it live on GitHub Pages
+
+This repo already includes `.github/workflows/deploy.yml`, which builds the
+site and deploys it to GitHub Pages automatically on every push to `main`.
+The git repo is already initialized locally with one commit — you just need
+to create the GitHub repo and push.
+
+1. Create a new **empty** repository on GitHub (no README/license/gitignore —
+   this project already has them). Note the URL it gives you, e.g.
+   `https://github.com/<your-username>/<repo-name>.git`
+
+2. From this project folder, run:
+
+   ```bash
+   git remote add origin https://github.com/<your-username>/<repo-name>.git
+   git push -u origin main
+   ```
+
+3. On GitHub, go to the repo's **Settings → Pages**, and under "Build and
+   deployment → Source", choose **GitHub Actions**. (You only need to do
+   this once — after that, every push redeploys automatically.)
+
+4. Wait a minute for the "Deploy to GitHub Pages" workflow to finish (check
+   the **Actions** tab), then your site will be live at:
+
+   ```
+   https://<your-username>.github.io/<repo-name>/
+   ```
+
+   The build uses relative asset paths (`base: './'` in `vite.config.js`),
+   so it works correctly at that subpath without any extra configuration —
+   no need to match the repo name to anything in the code.
+
 ## Run locally
 
 ```bash
